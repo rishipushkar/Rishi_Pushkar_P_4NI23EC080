@@ -24,8 +24,8 @@ The given specifications for our amplifier are:
 - *Supply Voltage (Vdd)* = 1.8V.  
 - *Gate Voltage (Vg)* = 0.6V (DC offset)  
 - *Power Budget* = 50μW.  
-- *Drain Current (Id)* = 27μA (calculated using power constraints)  
-- *MOSFET Width (W)* = 1.08μm.  
+- *Drain Current (Id)* = 27.7μA (calculated using power constraints)  
+- *MOSFET Width (W)* = 1.12μm.  
 
 Additionally, the gate voltage is modulated using a sinusoidal input signal:  
 
@@ -46,14 +46,16 @@ I = P / V
 
 I = 50μW / 1.8V
 
-I = 27μA
+I = 27.7μA
 
 
-We determine the *MOSFET width (W) = 1.08μm* in order to obtain the target operating conditions and good current conduction.  
+We determine the *MOSFET width (W) = 1.12μm* in order to obtain the target operating conditions and good current conduction.  
 
-![image](https://github.com/user-attachments/assets/13e5cd7f-c06d-421d-a64d-05496b7bda50)
+![image](https://github.com/user-attachments/assets/44ccee7d-93ef-43a4-8d2c-37e1ad33e635)
 
-![image](https://github.com/user-attachments/assets/c4bc361a-b3ee-42fa-a1c0-41cd900ac136)
+
+![image](https://github.com/user-attachments/assets/90ef910f-d5e4-4769-8aa3-77cd522b7b16)
+
 
 
 ---
@@ -71,7 +73,8 @@ A probe is placed at the *Drain (output)* and another at *Vg (input)* to visuali
 
 This helps in understanding the amplifier's gain and bandwidth.  
 
-![image](https://github.com/user-attachments/assets/e652c8ef-85d1-4d3c-8be1-e975900718a0)
+![image](https://github.com/user-attachments/assets/b3c16d6b-334c-4b05-8061-8d13aaf84297)
+
 
 
 ---
@@ -84,11 +87,9 @@ To observe the amplifier's behavior over time, a *Transient analysis* is perform
 
 This enables us to investigate the response of the amplifier to the *Sinusoidal input signal* in the time domain, capturing its transient performance.  
 
-![image](https://github.com/user-attachments/assets/07d6c26b-4fcd-4358-9c1c-e6ae8313b2f2)
+![image](https://github.com/user-attachments/assets/272341da-8be1-4c80-a83f-7e69a26d2628)
 
-![image](https://github.com/user-attachments/assets/ff9446c6-5425-4254-ad72-b6ec566da6be)
 
-![image](https://github.com/user-attachments/assets/18831a86-208e-45dc-b764-702e4813f23f)
 
 
 ---
@@ -123,7 +124,7 @@ The objective of this report is to evaluate the inverting behavior of a CS ampli
 
 ## Question
 
-The supplied supply voltage is **1.8V**, and the dissipation of power is **50μW**. Given a gate voltage (**VG**) of **0.7V**, the target voltage is used to determine the **DC operating point (ID)**. Moreover, an **AC analysis** is carried out with a sinusoidal input voltage, and then analyzed using shifted transients to determine the time domain.
+The supplied supply voltage is **1.8V**, and the dissipation of power is **50μW**. Given a gate voltage (**VG**) of **0.9V**, the target voltage is used to determine the **DC operating point (ID)**. Moreover, an **AC analysis** is carried out with a sinusoidal input voltage, and then analyzed using shifted transients to determine the time domain.
 
 ---
 
@@ -132,27 +133,27 @@ The supplied supply voltage is **1.8V**, and the dissipation of power is **50μW
 ### **PMOS Configuration:**
 
 - **Source:** Connected to supply (**1.8V**)  
-- **Gate:** Connected to **0.7V**  
+- **Gate:** Connected to **0.9V**  
 - **Drain:** Connected to NMOS drain.  
 
 ### **NMOS Configuration:**
 
 - **Source:** Grounded.  
-- **Gate:** Connected to **0.7V**.  
+- **Gate:** Connected to **0.9V**.  
 - **Drain:** Connected to PMOS drain.  
 
 ### **Chosen Transistor Dimensions:**
 
-PMOS (W/L): ___ / ___ 
+PMOS (W/L): 0.61μm / 180nm 
 
-NMOS (W/L): ___ / ___
+NMOS (W/L): 0.61μm / 180nm
 
 ## **DC Analysis**
 
 Our approach in conducting DC analysis involves identifying the quiescent operating point (ID) and node voltages that are required to operate the MOSFET.
 
 - **Supply Voltage (VDD)**: 1.8V  
-- **Gate Voltage (VG)**: 0.7V  
+- **Gate Voltage (VG)**: 0.9V  
 - **Power Budget (P)**: 50μW  
 
 P = VDD * ID
@@ -161,7 +162,13 @@ ID = P/VDD
 
 ID = 50μW / 1.8V
 
-ID = 27μA
+ID = 27.7μA
+
+![image](https://github.com/user-attachments/assets/d6d205ae-471e-4308-a485-daf4ba1ae641)
+
+
+![image](https://github.com/user-attachments/assets/48f7fcaa-5047-41d5-b093-3463933ad5a5)
+
 
 ## **AC Analysis**
 
@@ -169,7 +176,7 @@ A sinusoidal input is included in the AC analysis through a modification of gate
 
 **Sinusoidal Input Voltage**
 
-- DC Offset: 0.7V  
+- DC Offset: 0.9V  
 - Amplitude: 50mV  
 - Frequency: 1kHz
 
@@ -182,7 +189,8 @@ A sinusoidal input is included in the AC analysis through a modification of gate
 
 By analyzing the AC, one can determine gain, bandwidth, phase, and other characteristics of the amplifier's frequency response.
 
-Graph
+![image](https://github.com/user-attachments/assets/6c1c2fa0-3277-4d41-89bb-8a3d2d9f0fd3)
+
 
 ## **Transient Analysis**
 
@@ -194,7 +202,8 @@ By examining the transient response of the amplifier, it is possible to determin
 
 The transient analysis provides information about the amplifier's time-domain behavior, such as distortion, settling time, and waveform reproduction.
 
-Graph
+![image](https://github.com/user-attachments/assets/df581cd7-ab33-4d89-8274-4c75ef71b52b)
+
 
 ## **Inference**
 
