@@ -51,7 +51,8 @@ I = 27.7μA
 
 We determine the *MOSFET width (W) = 1.12μm* in order to obtain the target operating conditions and good current conduction.  
 
-![image](https://github.com/user-attachments/assets/e2a35ba0-ba43-4514-8cc0-f6958314db20)
+![image](https://github.com/user-attachments/assets/4f5e9309-514d-4df7-bfd0-91b88f8087e8)
+
 
 
 
@@ -165,7 +166,8 @@ ID = 50μW / 1.8V
 
 ID = 27.7μA
 
-![image](https://github.com/user-attachments/assets/d6d205ae-471e-4308-a485-daf4ba1ae641)
+![image](https://github.com/user-attachments/assets/15e431e9-6857-4690-9cbb-30c86b180d49)
+
 
 
 ![image](https://github.com/user-attachments/assets/48f7fcaa-5047-41d5-b093-3463933ad5a5)
